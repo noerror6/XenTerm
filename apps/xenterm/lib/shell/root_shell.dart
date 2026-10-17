@@ -11,7 +11,7 @@ import '../screens/hosts/hosts_screen.dart';
 import '../screens/keychain/keychain_screen.dart';
 import '../screens/logs/logs_screen.dart';
 
-enum NavDestination { hosts, keys, forwards, snippets, knownHosts, logs }
+enum NavDestination { hosts, keys, forwards, snippets, knownHosts, logs, settings }
 
 // Keychain 与 Logs 已按原版截图实现（screens/keychain, screens/logs）；
 // forwards/snippets/knownHosts 仍为占位，等桥接数据。
@@ -33,6 +33,7 @@ class _RootShellState extends State<RootShell> {
     (NavDestination.snippets, '快捷命令', BootstrapIcons.lightning),
     (NavDestination.knownHosts, '已知主机', BootstrapIcons.shieldCheck),
     (NavDestination.logs, '日志', BootstrapIcons.clockHistory),
+    (NavDestination.settings, '设置', BootstrapIcons.gear),
   ];
 
   @override
@@ -74,6 +75,7 @@ class _RootShellState extends State<RootShell> {
             NavDestination.forwards => '端口转发',
             NavDestination.snippets => '快捷命令',
             NavDestination.knownHosts => '已知主机',
+            NavDestination.settings => '设置',
             _ => '?',
           },
         ),
